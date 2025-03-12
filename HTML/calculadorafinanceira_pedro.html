@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+</head>
+<body>
+    <h2><b>Veja quanto da sua produção será salva com nossos serviços!! <br> Preencha os dados e descubra.</b></h2>
+    Informe a área (hectar) em que serão implantados sensores: <input id="ipt_area"> <br> <br>
+    Informe a quantidade de sacas produzidas nessa área: <input id="ipt_saca"> <br> <br>
+    <b>Descubra clicando em "Calcular"</b> <br>
+    <button onclick="resultado()">Calcular</button> <br> <br>
+    <div id="div_txt"></div>
+</body>
+</html>
+<script>
+    function resultado() {
+        var ax_area = Number(ipt_area.value) * 10000
+        var ax_saca = Number(ipt_saca.value)
+        var ax_sensor = 15 / 100
+        var ax_manutencao = 2
+        var ax_preco = ax_area * ax_sensor * ax_manutencao
+        var ax_perda = ax_saca * 131
+        var ax_economia = ax_perda * 0.85
+        div_txt.innerHTML = `Levando em conta que na área de ${ipt_area.value} hectares, sua produção seria de ${ax_saca} sacas, e que o preço médio de uma saca de soja no Brasil seja em torno de R$131,00, isso totalizaria uma perda de aproximadamente R$${ax_perda}. <br> Com os nossos serviços, podemos minimizar essa perda em até 85%, dessa forma economizando, aproximadamente, R$${ax_economia}!!`
+    }
+</script>
