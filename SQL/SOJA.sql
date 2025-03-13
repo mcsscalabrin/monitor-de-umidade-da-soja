@@ -31,11 +31,11 @@ CREATE TABLE sensor(
 
 -- INSERT FICTÍCIO PARA A TABELA "SENSOR"
 INSERT INTO sensor (localizacao, statusSensor, capturas) VALUES
-    ('Talhão A1', 0.95, 150.5),
+    ('Talhão A1', 0.85, 150.5),
     ('Setor B3', 0.85, 230.0),
-    ('Norte Fazenda', 0.90, 180.75),
+    ('Norte Fazenda', 0.82, 180.75),
     ('Sul Fazenda', 0.78, 420.25),
-    ('Talhão C2', 0.99, 95.0),
+    ('Talhão C2', 0.75, 95.0),
     ('Reserva D4', 0.82, 310.5);
 
 SELECT idSensor AS ID, localizacao AS Local, statusSensor AS 'Status' 
