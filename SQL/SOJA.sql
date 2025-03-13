@@ -5,17 +5,17 @@ CREATE TABLE cadastro(
     nome VARCHAR (100),
     dtNasc DATE,
     email VARCHAR(100),
-    cnpj CHAR(14) 
+    cpf CHAR(11) 
 );
 
 -- INSERT FICTÍCIO PARA A TABELA "CADASTRO"
-INSERT INTO cadastro (nome, dtNasc, email, cnpj) VALUES
-    ('João Silva', '1985-03-15', 'joao.silva@agrosoja.com', '00123456000199'),
-    ('Maria Oliveira', '1990-07-22', 'maria.oliveira@agrosoja.com', '00123456000199'),
-    ('Carlos Souza', '1978-11-05', 'carlos.souza@agrosoja.com', '00123456000199'),
-    ('Ana Pereira', '1995-02-18', 'ana.pereira@agrosoja.com', '00123456000199'),
-    ('Pedro Costa', '1982-09-30', 'pedro.costa@agrosoja.com', '00123456000199'),
-    ('Fernanda Lima', '1993-12-12', 'fernanda.lima@agrosoja.com', '00123456000199');
+INSERT INTO cadastro (nome, dtNasc, email, cpf) VALUES
+    ('João Silva', '1985-03-15', 'joao.silva@agrosoja.com', '00123456000'),
+    ('Maria Oliveira', '1990-07-22', 'maria.oliveira@agrosoja.com', '00123456000'),
+    ('Carlos Souza', '1978-11-05', 'carlos.souza@agrosoja.com', '00123456000'),
+    ('Ana Pereira', '1995-02-18', 'ana.pereira@agrosoja.com', '00123456000'),
+    ('Pedro Costa', '1982-09-30', 'pedro.costa@agrosoja.com', '00123456000'),
+    ('Fernanda Lima', '1993-12-12', 'fernanda.lima@agrosoja.com', '00123456000');
 
 SELECT nome AS Nome, dtNasc AS 'Data Nascimento' 
 FROM cadastro;
@@ -56,6 +56,5 @@ INSERT INTO registro (umidade_atual, dtRegistro) VALUES
     (0.25, '2023-11-11 14:00:00'),
     (0.38, '2023-11-12 10:20:00');
 
-SELECT idRegistro AS ID, umidade_atual AS Umidade, dtRegistro AS 'Data e Hora',
-IF(umidade_atual < 0.30, 'Preocupação', 'Normal') AS Status
+SELECT idRegistro AS ID, umidade_atual AS Umidade, dtRegistro AS 'Data e Hora'
 FROM registro;
