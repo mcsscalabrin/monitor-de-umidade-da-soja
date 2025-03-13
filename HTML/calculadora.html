@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora Financeira</h1><br>
+    Insira a sua área de plantio em Metros quadrados (m²): <input id="ipt_area"><br>
+    Insira quantos reais a sua produção perde por ano: <input id="ipt_perda"><br>
+    <button onclick="calc()">Calcular</button><br>
+    <div id="div"></div><br>
+
+</body>
+</html>
+<script>
+    function calc() {
+        var metroQuadrado = Number(ipt_area.value)
+        var qtdSensor = metroQuadrado / 100
+        
+        var resultado = (metroQuadrado / 100) * 100
+        var resultadoManutencao = (metroQuadrado / 100) * 10
+        var locacao = (ipt_area.value / 100) * 12
+        
+        if (ipt_perda.value > (resultado + resultadoManutencao + locacao)) {
+        div.innerHTML = ` Temos a solução para o seu problema!<br> `
+
+    }
+div.innerHTML += ` De acordo com o dado inserido acima, levando em conta que cada
+ sensor custa 10 reais o preço do nosso serviço custará ${resultado} reais para a sua plantação.
+ <br> Já o preço da manutenção, englobando todos os sensores necessários para a redução na perca da soja
+ , será de ${resultadoManutencao} reais.<br> De acordo com o contrato de um ano, o valor a ser pago por mês será de 12 reais por estrutura (arduino + 10 sensores + jumpers).<br>Desse modo, o custo anual da locação será de ${locacao} `
+
+    }
+
+</script>
+
+
+<!-- 
+jumper = 0,20
+sensor = 75 (10 sensores)
+arduino = 60
+-->
