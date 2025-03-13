@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora finaceira</title>
+</head>
+<body style="background-color: rgb(255, 253, 250);">
+    <h2>Faça já o seu Orçamento!</h2>
+    <div><p>Maximize sua produtividade e reduza perdas com nosso monitorador de umidade para plantações de soja! <br>
+        Nosso sistema inteligente permite um controle eficiente da umidade do solo, ajudando você a economizar e melhorar a colheita. <br>
+        Faça um orçamento personalizado e descubra como modernizar sua fazenda de forma simples e acessível. <br>
+        -----------------------------------------------------------------------------------------------------------------------------</p></div>
+    <br>
+    Quantos metros quadrados tem a area de plantação <input id="metros">
+    <br>
+    <br>
+    Quantos reais você chega a perder por ano devido a umidade <input id="perda">
+    <br>
+    <br>
+    <button onclick="calcular()">Calcular Preço</button>
+    <br>
+    <p id="txt"></p>
+    <br>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPQdh16vZaVqktOt2O6UENWOpYLsS_Eo70vg&s" alt="">
+</body>
+</html>
+<script>
+function calculo() {
+    var sensores = metros.value * 10;
+    var recuperado    
+}
+
+    function calcular() {
+        var preco = metros.value * 0.15
+        var sensor = metros.value * 0.10
+        var maodeobra = Number(preco) - Number(sensor)
+        
+        txt.innerHTML = `<br>
+                 Sua fazenda perde aproximadamente <b><span style="color: red;">R$${perda.value}</span></b> por ano devido à falta de controle de umidade.<br><br>
+                 Com nosso projeto, essa perda pode ser reduzida em até <b>80%</b>, diminuindo para apenas <b><span style="color: green;">R$${perda.value * 0.2}</span></b>.<br><br>
+                 O investimento total no projeto será de <b><span style="color: green;">R$${preco}</span></b>, dividido da seguinte forma:<br>
+                 <b>R$${sensor}</b> - Materiais (sensores, fiação, site, Arduinos e manutenção).<br>
+                 <b>R$${maodeobra}</b> - Mão de obra especializada.<br><br>
+                 Modernize sua fazenda e aumente seus lucros!`
+                }
+                </script>  
