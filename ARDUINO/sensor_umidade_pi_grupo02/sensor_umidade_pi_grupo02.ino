@@ -17,9 +17,9 @@ void loop()
   /*
   DECLARANDO A VARIÁVEL QUE CONVERTE DO VALOR RECEBIDO DO SENSOR, DE BYTE PARA MEGABYTE,
   DEPOIS MULTIPLICANDO POR 100 PARA MOSTRAR O RESULTADO EM PORCENTAGEM
-  FASE DE COLHEITA: UMIDADE TEM QUE SER DE 12 A 14%
+  FASE DE MATURAÇÃO: UMIDADE TEM QUE SER DE 30 A 40%
   */
-  float porcentagemUmidade = (100 - ((leituraSensor / 1023.0) * 100)) - 62;
+  float porcentagemUmidade = (100 - ((leituraSensor / 1023.0) * 100)) - 42;
 
   /*
   MOSTRA NO CONSOLE O VALOR DA UMIDADE REGISTRADA
@@ -27,17 +27,17 @@ void loop()
   DE UMIDADE MAXIMA E MINIMA PARA AUXÍLIO
   */
   Serial.print("UmidadeMax:");
-  Serial.print(14);
+  Serial.print(40);
   Serial.print(" ");
   Serial.print("UmidadeSolo:");
   Serial.print(porcentagemUmidade);
   Serial.print(" ");
-  Serial.print("UmidadeMin");
-  Serial.println(12);
+  Serial.print("UmidadeMin:");
+  Serial.println(30);
 
-  
- 
-
+  if (porcentagemUmidade < 0) {
+    porcentagemUmidade = 0;
+  }
 
   // AGUARDA 1 SEGUNDO PARA EXECUTAR OS COMANDOS DENTRO DO LOOP NOVAMENTE
   delay(1000);
