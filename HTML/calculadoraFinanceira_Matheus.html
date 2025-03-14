@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -53,4 +54,59 @@
 
         div_resultado.innerHTML = resultado;
     }
+=======
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Financeira</title>
+</head>
+
+<body>
+    <h1>Calculadora Financeira do Monitor de Umidade do Soja</h1>
+    Área em m²: <input id="ipt_area" /><br /><br />
+    Perda anual (R$): <input id="ipt_perda" /><br /><br />
+    <button onclick="calcular()">Calcular</button><br /><br />
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    /* CONSTANTES DOS PREÇOS (R$) */
+    var sensor = 10; // Preço por sensor
+    var arduino = 60; // Preço por Arduino
+    var jumper = 0.25; // Preço por jumper
+    var jumpersPorSensor = 3; // Quantidade de jumpers por sensor
+
+    function calcular() {
+        // atribuindo o valor dos inputs para as variáveis
+        var area = Number(ipt_area.value);
+        var perda = Number(ipt_perda.value);
+
+        // calculos
+        var qtdSensor = area / 200;
+        var qtdArduino = qtdSensor / 10;
+        var custoSensores = qtdSensor * sensor;
+        var custoArduino = qtdArduino * arduino;
+        var custoJumpers = qtdSensor * jumpersPorSensor * jumper;
+        var custoTotal = custoSensores + custoArduino + custoJumpers;
+
+        // exibindo o output
+        var resultado = `Custo total do projeto: R$${custoTotal} <br>
+            Quantidade de sensores: ${qtdSensor} <br>
+            Quantidade de Arduinos: ${qtdArduino} <br>`;
+
+        // verificando a viabilidade
+        // se o custo total for menor que a perda, isso significa que o investimento no monitor é viável
+        if (custoTotal < perda) {
+            resultado += "<b>RECOMENDADO: </b>O investimento é viável!";
+        }
+        // caso contrário... mostra que o custo do projeto supera as perdas atuais do cliente
+        else {
+            resultado += "ANÁLISE: O custo supera as perdas atuais";
+        }
+
+        div_resultado.innerHTML = resultado;
+    }
+>>>>>>> f3bffdea285e86196bd55ae3a88525cd46f831a2
 </script>
