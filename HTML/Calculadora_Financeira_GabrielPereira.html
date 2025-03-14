@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora_Financeira_Agro_Smart</title>
+</head>
+<body>
+    <h2>Calculadora Financeira Agro Smart</h2>
+    Informe quantos hectares tem sua plantação: <input id="ipt_hectar">
+    <br><br>
+    Informe a perda anual da sua plantação: <input id="ipt_perda"> 
+    <br><br>
+    <button onclick="valor()">Fazer Orçamento</button>
+    <br><br>
+    <div id="div_txt"></div>
+</body>
+</html>
+<script>
+    function valor() {
+        var area = Number(ipt_hectar.value) + 10000
+        var anual = Number(ipt_perda.value) * 420
+        var economia = area * 0.61
+        var valor = Number(ipt_hectar.value) + Number(ipt_perda.value);
+        div_txt.innerHTML = `Você tem um prejuizo de $${valor} reais por ano. Com a Agro Smart sua economia é de ${economia} do valor. Nós somos a sua solução, Nós somos a Agro Smart.`
+    }
+    
+</script>
