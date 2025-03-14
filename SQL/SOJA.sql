@@ -58,3 +58,7 @@ INSERT INTO registro (umidade_atual, dtRegistro) VALUES
 
 SELECT idRegistro AS ID, umidade_atual AS Umidade, dtRegistro AS 'Data e Hora'
 FROM registro;
+
+
+
+-- Matheus Chiosini Scalabrin, Bryan Anthony, Pedro Sakaue, João Pedro França, Vinícius Melo, David Escudeiro, Lukas Farias, Beno Goulart, Renan Daher Franceschelli

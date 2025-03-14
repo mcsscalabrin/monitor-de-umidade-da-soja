@@ -26,12 +26,12 @@
     }
     function calc() {
         var hectar = Number(ipt_hectar.value) * 10000;
-        var qtdSensor = hectar / 300;
-        var resultado = qtdSensor * 6000;
-        var resultadoManutencao = qtdSensor * 7;
-        var locacao = (qtdSensor * 2.00) * 12;
+        var qtdSensor = (hectar * 1)
+        var resultado = qtdSensor * 6.50;
+        var resultadoManutencao = qtdSensor * 0.40;
+        var locacao = (qtdSensor * 0.10) * 12;
         
-        div.innerHTML = ` De acordo com o dado inserido acima, levando em conta que cada estrutura (arduino + 4 sensores + jumpers) custa 120 reais, o preço do nosso serviço custará R$${resultado} reais para a sua plantação.<br>
+        div.innerHTML = ` De acordo com o dado inserido acima, levando em conta que cada sensor custa 6,50 reais, o preço do nosso serviço custará R$${qtdSensor} reais para a sua plantação.<br>
         Já o preço da manutenção, englobando todos os sensores necessários para a redução na perca da soja, levando em conta que, cada sensor terá um custo de manutenção de R$7,00, será de R$${resultadoManutencao} reais por ano.<br>
         De acordo com o contrato de um ano, o valor a ser pago por mês será de 2,00 reais por estrutura.
         Desse modo, o custo anual da locação será de ${locacao} reais `
