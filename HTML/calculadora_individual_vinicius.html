@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Soja</title>
+</head>
+<body>
+    <h2>Calculadora de Sensores para Terreno</h2>
+    Informe a Área da sua plantação em hectares: <input id="hectar"><br>
+    Informe quantas sacas voce conseguiu fazer na sua ultima safra: <input id="safra"><br>
+    Informe quantas sacas voce perdeu na sua ultima safra: <input id="perda"><br>
+    <button onclick="calcular()">Calcular</button><br>
+    <b id="div_calculo"></b><br>
+</body>
+</html>
+<script> 
+   /*
+   A variavel metros transforma hectares em metros  ( var metros = Number(hectar.value) * 10000; )
+   A variavel qtdSensor é a distancia que o sensor consegue chegar para achar a quantidade de sensores que teremos que usar na sua plantação (  var qtdSensor = Number(metros) / 200; )
+   A variavel valorSensor é o valor total do sensor ( var valorSensor = 70; )
+   A variavel valores são quanto vai custar para o cliente o serviço ( var valores = Number(qtdSensor) * Number(valorSensor); )
+   A variavel perca Mostrara qual a porcentagem da perda da plantação por conta da umidade ( var perca = (Number(perda.value) / Number(safra.value)) * 100; )
+   A varivel manutencao é o valor de quanto custara cada uma das manutenções nos sensores assim que for requisitado ( var manutencao = 2; )
+   */
+    function calcular(){
+        var manutencao = 2;
+        var valorSacas = 133;
+        var valorSensor = 70;
+        var metros = Number(hectar.value) * 10000;
+        var qtdSensor = Number(metros) / 200;
+        var valores = Number(qtdSensor) * Number(valorSensor);
+        var perca = (Number(perda.value) / Number(safra.value)) * 100;
+
+        div_calculo.innerHTML += `De acordo com os dados inseridos acima, levando em conta que sua plantação tem ${hectar.value} hectares,para voce preencher toda a sua plantação voce deve fazer o
+        investimento de $${valores} assim conseguindo colocar sensores em toda sua plantação,sua plantação tem uma perda de ${perca}% de sacas devido a umidade assim perdendo um valor de $${valorSacas} Reais
+        por cada uma das sacas, cada um dos sensores tem o valor de $${valorSensor} Reais e cada manutenção a ser feita nos sensores tera um custo de $${manutencao} para cada sensor para termos o melhor desempenho possivel na sua plantação`
+    }
+</script>
