@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+
+<body>
+    <center>
+
+        <h1> Simulador Financeiro </h1>
+
+        <p> Quantos hectares tem sua area de trabalho? <input type="text" id="inp_tam"> </p>
+
+        <br>
+        <button onclick="calcular()">CALCULAR</button>
+
+        <br><br>
+
+        <div id="info"></div>
+    </center>
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+
+        var hect = Number(inp_tam.value) * 10000;
+        var sensor = hect / 3;
+        var perda = hect * 420;
+        var manut = sensor * 7;
+        var total = sensor * 6.5;
+
+
+            info.innerHTML = `você perde pelo menos <span style="color: red;"> ${perda} </span> de reias por ano. (este calculo é feito levando em consideração que você perde 420 reais por hectar no ano). <br>
+        Você precisará de ${sensor} sensores (baseato em sua quantidade de hectar).<br>
+        Em manutenção você gastará em torno dê ${manut} reais isto é 7 reais por sensor, caso precise. <br>
+        Você irá lucrar pelo menos, mais<span style="color: green;"> ${perda} </span>.
+        <br><br>
+        Com a locação, ao total você ira gastar ${total}`;
+
+    }
+
+</script>
