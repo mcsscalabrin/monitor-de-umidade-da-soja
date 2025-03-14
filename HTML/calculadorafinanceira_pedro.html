@@ -20,6 +20,6 @@
         var ax_saca = Number(ipt_saca.value)
         var ax_perda = ax_saca * 131 * 0.1
         var ax_economia = ax_perda * 0.85
-        div_txt.innerHTML = `Olá, ${ipt_nome.value}! Iremos te ajudar a calcular quantos reais você salvará na sua produção. <br> <br> Levando em conta que na área de ${ipt_area.value} hectares, sua produção seria de ${ax_saca} sacas, e que o preço médio <br> de uma saca de soja no Brasil seja em torno de R$131,00, isso totalizaria uma perda de <br> <b>APROXIMADAMENTE</b> <span style="color: red;">R$${ax_perda}</span>. <br> <br> Com os nossos serviços, podemos minimizar essa perda em até 85%, dessa forma, economizando <br> <b>APROXIMADAMENTE</b>, <span style="color: green;">R$${ax_economia}</span>!!`
+        div_txt.innerHTML = `Olá, ${ipt_nome.value}! Iremos te ajudar a calcular quantos reais você salvará na sua produção. <br> <br> Levando em conta que na área de ${ipt_area.value} hectares, sua produção seria de ${ax_saca} sacas, e que o preço médio <br> de uma saca de soja no Brasil seja em torno de R$131,00, isso totalizaria uma perda de <br> <b>APROXIMADAMENTE</b> <span style="color: red;">R$${ax_perda}</span> devido à falta de controle de umidade do solo (aproximadamente 10% da produção). <br> <br> Com os nossos serviços, podemos minimizar essa perda em até 85%, dessa forma, economizando <br> <b>APROXIMADAMENTE</b>, <span style="color: green;">R$${ax_economia}</span>!!`
     }
 </script>
