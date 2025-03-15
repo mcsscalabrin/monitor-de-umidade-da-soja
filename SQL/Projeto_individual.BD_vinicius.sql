@@ -8,16 +8,17 @@ create table cadastro(
     dtNasc DATE,
     email VARCHAR(100),
     cnpj CHAR(14), 
-    telefone varchar(16)
+    telefone varchar(16),
+    senha varchar(16)
 );
-
+-- INSERT FICTÍCIO PARA A TABELA "Cadastro"
 insert into cadastro values
-    (default,'João Silva', '1985-03-15', 'joao.silva@agrosoja.com', '00123456000199',11985763456),
-    (default,'Maria Oliveira', '1990-07-22', 'maria.oliveira@agrosoja.com', '00123456000199','11946732435'),
-    (default,'Carlos Souza', '1978-11-05', 'carlos.souza@agrosoja.com', '00123456000199','11923225463'),
-    (default,'Ana Pereira', '1995-02-18', 'ana.pereira@agrosoja.com', '00123456000199','11911234565'),
-    (default,'Pedro Costa', '1982-09-30', 'pedro.costa@agrosoja.com', '00123456000199','11934742535'),
-    (default,'Fernanda Lima', '1993-12-12', 'fernanda.lima@agrosoja.com', '00123456000199','11982723563');
+    (default,'João Silva', '1985-03-15', 'joao.silva@agrosoja.com', '00123456000199','11985763456','SOS#111'),
+    (default,'Maria Oliveira', '1990-07-22', 'maria.oliveira@agrosoja.com', '00123456000199','11946732435','SSE#555'),
+    (default,'Carlos Souza', '1978-11-05', 'carlos.souza@agrosoja.com', '00123456000199','11923225463','BBG#999'),
+    (default,'Ana Pereira', '1995-02-18', 'ana.pereira@agrosoja.com', '00123456000199','11911234565','LLO#888'),
+    (default,'Pedro Costa', '1982-09-30', 'pedro.costa@agrosoja.com', '00123456000199','11934742535''HHY#777'),
+    (default,'Fernanda Lima', '1993-12-12', 'fernanda.lima@agrosoja.com', '00123456000199','11982723563','KKI#666');
 
 select Nome as 'Nome' , dtNasc as "Data de Nascimento" from cadastro;
 
