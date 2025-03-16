@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sensores e Produção de Soja</title>
+</head>
+
+<body>
+
+    <h2>Calculadora de Sensores para Terreno</h2>
+    <p>Produtividade média de soja: 60 sacas de 60 kg por hectare (3.600 kg/ha)</p>
+    <p>Preço/sensor: R$10,00</p>
+    <p>Preço/manutenção: R$5,00</p>
+    <p>Cobertura por sensor (m²): 100m²</p>
+
+    Área do terreno (m²): <input type="text" id="area"><br>
+
+    Orçamento disponível (R$): <input type="text" id="orcamento"><br>
+
+    Quanto você produziu (sacas): <input type="text" id="produzido"><br>
+
+    Quanto você perdeu (sacas): <input type="text" id="perda"><br>
+
+    <button onclick="calcularSensores()">Calcular</button><br>
+
+    <h3>Resultado:</h3><br>
+    <p id="resultado"></p><br>
+
+    <script>
+        function calcularSensores() {
+            var areah = Number(area.value);
+            var orcamentoo = Number(orcamento.value);
+            var produzidoo = Number(produzido.value);
+            var perdaa = Number(perda.value);
+            var precoSensor = 10;
+            var cobertura = 100;
+            var manutencao = 5;
+
+            if (areah > 0 && produzidoo > 0 && perdaa >= 0) {
+                var quantidadeSensores = (areah / cobertura);
+                var precoTotal = quantidadeSensores * precoSensor;
+                var manutencaoTotal = quantidadeSensores * manutencao;
+                var custoAnual = precoTotal + manutencaoTotal;
+                var porcentagemPerda = (perdaa / produzidoo) * 100;
+                
+                var produtividadeTotalSacas = 60;
+                var perdaReduzida = 0.046;
+                var producaoComPerdaReduzida = produtividadeTotalSacas * (1 - perdaReduzida);
+                var ganhoEstimadoSacas = produtividadeTotalSacas - producaoComPerdaReduzida;
+                
+                resultado.innerHTML = `
+                    Você precisará de ${quantidadeSensores} sensores.<br>
+                    Custo total: R$ ${precoTotal}<br>
+                    Custo anual de manutenção: R$ ${manutencaoTotal}<br>
+                `;
+
+                if (orcamentoo && orcamentoo > 0) {
+                    resultado.innerHTML += orcamentoo >= custoAnual 
+                        ? `Está dentro do orçamento!<br>` 
+                        : `Excede o orçamento em R$ ${(custoAnual - orcamentoo)}<br>`;
+                }
+
+                resultado.innerHTML += `
+                    <br>Produção de soja:<br>
+                    Perda atual: ${porcentagemPerda}%<br>
+                    Com sensores, perda reduzida para 4,6%: ${producaoComPerdaReduzida} sacas/ha<br>
+                    Você ganharia aproximadamente ${ganhoEstimadoSacas} sacas a mais por hectare.<br>
+                `;
+            } else {
+                resultado.innerHTML = 'Por favor, insira valores válidos para todos os campos.';
+            }
+        }
+    </script>
+</body>
+
+</html>
