@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+</head>
+
+<body>
+    <div>
+
+        <h1 style="color: rgb(66, 184, 86);">Agro smart</h1>
+        <h2>Calculadora Financeira</h2>
+
+        Digite seu primeiro nome: <input type="text" id="ipt_nome"><br> <br>
+        Quantas sacas você produz anualmente: <input type="number" id="ipt_qntSaca"> <br> <br>
+        Quanto de dinheiro você vende a unidade da saca de soja: <input type="number" id="ipt_precoSaca"> <br><br>
+        Sacas perdidas anualmente: <input type="text" id="ipt_perda_anual_saca"><br> <br>
+        Sacas perdidas por conta da falta do controle de umidade anualmente: <input type="number"
+            id="ipt_perda_umidade"> <br> <br>
+        Area do terreno (Hectares): <input type="number" id="ipt_area"><br><br><br>
+        Calcule o lucro que pode obter: <button onclick="btn_calcular()">calcular</button>
+        <strong>
+            <div id="txt"></div>
+        </strong>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function btn_calcular() {
+
+        if (ipt_qntSaca.value > 0 && ipt_precoSaca.value > 0 && ipt_perda_anual_saca.value > 0 && ipt_perda_umidade.value > 0 && ipt_area.value > 0) {
+
+            var ax_hectar_para_metro = ipt_area.value * 10000;
+            var ax_qntSensores = ax_hectar_para_metro / 200;
+            var ax_precoSensores = ax_qntSensores * 10
+            var ax_totalSaca = ipt_qntSaca.value - ipt_perda_anual_saca.value;
+            var ax_valor_total_saca_anual = ax_totalSaca * ipt_precoSaca.value;
+            var ax_diferencaSaca = ipt_perda_anual_saca.value - ipt_perda_umidade.value;
+            var ax_totalSaca_umidade = ipt_qntSaca.value - ax_diferencaSaca
+            var ax_valor_total_saca_umidade = ax_totalSaca_umidade * ipt_precoSaca.value;
+            var ax_lucro = ax_valor_total_saca_umidade - ax_valor_total_saca_anual 
+
+            txt.innerHTML = `<br> <br>Olá ${ipt_nome.value}, conforme informado você atualmente ganha 
+            <span style="color: firebrick;"> ${ax_valor_total_saca_anual} reais</span> por ano.<br>
+            com nossa solução de implementação de sensores de umidade, você poderá ganhar até
+            <span style="color: rgb(66, 184, 86);"> ${ax_valor_total_saca_umidade} reais</span> por ano, aproximadamente.
+            Onde o lucro que será obtido com nosso projeto é de<span style="color: green;"> ${ax_lucro} reais</span>. <br>
+            Na sua área irá precisar de ${ax_qntSensores} sensores de umidade. <br>`;
+        }
+        else {
+            txt.innerHTML = `<br> <br> Verifique e coloque os dados corretamente.`
+        }
+
+
+    }
+
+
+</script>
