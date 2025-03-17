@@ -34,7 +34,7 @@
         var qtdSensor = (metrosQuadrados / 6)                       //6 entradas analogicas
         var resultado = qtdSensor * 110;                            //preço da estrutura (6 sensores + arduino + jumpers)
         var resultadoManutencao = qtdSensor * 0.40;                 //preço da manutenção por sensor (R$0.40)
-        var locacao = 12 * (qtdSensor * 1.00);                      //preço anual ao alugar o nosso sistema
+        var locacao = 12 * (qtdSensor * 0.20);                      //preço anual ao alugar o nosso sistema (por sensor o custo é de R$0.20)
 
         div.innerHTML = ` De acordo com o dado inserido acima, 
         o preço do nosso serviço custará R$${resultado} reais para a sua plantação. <br>
