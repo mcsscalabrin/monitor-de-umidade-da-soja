@@ -8,14 +8,13 @@ CREATE TABLE cadastro(
     cpf CHAR(11) 
 );
 
--- INSERT FICTÍCIO PARA A TABELA "CADASTRO"
 INSERT INTO cadastro (nome, dtNasc, email, cpf) VALUES
-    ('João Silva', '1985-03-15', 'joao.silva@agrosoja.com', '00123456000'),
-    ('Maria Oliveira', '1990-07-22', 'maria.oliveira@agrosoja.com', '00123456000'),
-    ('Carlos Souza', '1978-11-05', 'carlos.souza@agrosoja.com', '00123456000'),
+    ('João Pedro', '1985-03-15', 'joao.pedro@agrosoja.com', '00123456000'),
+    ('Matheus Oliveira', '1990-07-22', 'mat.oliveira@agrosoja.com', '00123456000'),
+    ('Carlos Pereira', '1978-11-05', 'carlos.p@agrosoja.com', '00123456000'),
     ('Ana Pereira', '1995-02-18', 'ana.pereira@agrosoja.com', '00123456000'),
-    ('Pedro Costa', '1982-09-30', 'pedro.costa@agrosoja.com', '00123456000'),
-    ('Fernanda Lima', '1993-12-12', 'fernanda.lima@agrosoja.com', '00123456000');
+    ('João Costa', '1982-09-30', 'j.costa@agrosoja.com', '00123456000'),
+    ('Renan Lima', '1993-12-12', 'renan.lima@agrosoja.com', '00123456000');
 
 SELECT nome AS Nome, dtNasc AS 'Data Nascimento' 
 FROM cadastro;
@@ -29,7 +28,6 @@ CREATE TABLE sensor(
     capturas FLOAT
 );
 
--- INSERT FICTÍCIO PARA A TABELA "SENSOR"
 INSERT INTO sensor (localizacao, statusSensor, capturas) VALUES
     ('Talhão A1', 0.85, 150.5),
     ('Setor B3', 0.85, 230.0),
@@ -47,7 +45,6 @@ CREATE TABLE registro(
     dtRegistro DATETIME
 );
 
--- INSERT FICTÍCIO PARA A TABELA "REGISTRO"
 INSERT INTO registro (umidade_atual, dtRegistro) VALUES
     (0.15, '2023-11-10 08:00:00'),
     (0.45, '2023-11-10 12:30:00'),
@@ -58,7 +55,5 @@ INSERT INTO registro (umidade_atual, dtRegistro) VALUES
 
 SELECT idRegistro AS ID, umidade_atual AS Umidade, dtRegistro AS 'Data e Hora'
 FROM registro;
-
-
 
 -- Matheus Chiosini Scalabrin, Bryan Anthony, Pedro Sakaue, João Pedro França, Vinícius Melo, David Escudeiro, Lukas Farias, Beno Goulart, Renan Daher Franceschelli

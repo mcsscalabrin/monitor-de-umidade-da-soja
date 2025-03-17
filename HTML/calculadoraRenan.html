@@ -1,3 +1,48 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <h1>Calculadora Financeira</h1><br>
+    Insira a sua área de plantio em Hectar: <input id="ipt_hectar"><br>
+    <button onclick="calc2()">Calcular a Sua Perda Anual</button><br>
+    <button onclick="calc()">Calcular Valor do Serviço</button><br><br>
+    <div id="div"></div><br>
+</body>
+
+</html>
+<script>
+    var perda = Number(0);
+    function calc2() {
+        perda = ipt_hectar.value * 820
+        div.innerHTML = ` Você perde, em média, ${perda} reais por ano.<br>
+        Nossa solução pode te ajudar.`
+        
+    }
+    function calc() {
+        var hectar = Number(ipt_hectar.value) * 10000;
+        var qtdSensor = (hectar * 1)
+        var resultado = qtdSensor * 6.50;
+        var resultadoManutencao = qtdSensor * 0.40;
+        var locacao = (qtdSensor * 0.10) * 12;
+        
+        div.innerHTML = ` De acordo com o dado inserido acima, levando em conta que cada sensor custa 6,50 reais, o preço do nosso serviço custará R$${resultado} reais para a sua plantação.<br>
+        Já o preço da manutenção, englobando todos os sensores necessários para a redução na perca da soja, levando em conta que, cada sensor terá um custo de manutenção de R$7,00, será de R$${resultadoManutencao} reais por ano.<br>
+        De acordo com o contrato de um ano, o valor a ser pago por mês será de 2,00 reais por estrutura.
+        Desse modo, o custo anual da locação será de ${locacao} reais `
+
+    }
+
+</script>
+
+
+=======
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -41,3 +86,4 @@
 </script>
 
 
+>>>>>>> a7c5894653f286cc787f477aaca7722baecc9aba
