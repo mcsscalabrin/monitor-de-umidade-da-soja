@@ -5,16 +5,17 @@ CREATE TABLE cadastro(
     nome VARCHAR (100),
     dtNasc DATE,
     email VARCHAR(100),
+    senha VARCHAR(40),
     cpf CHAR(11) 
 );
 
-INSERT INTO cadastro (nome, dtNasc, email, cpf) VALUES
-    ('João Pedro', '1985-03-15', 'joao.pedro@agrosoja.com', '00123456000'),
-    ('Matheus Oliveira', '1990-07-22', 'mat.oliveira@agrosoja.com', '00123456000'),
-    ('Carlos Pereira', '1978-11-05', 'carlos.p@agrosoja.com', '00123456000'),
-    ('Ana Pereira', '1995-02-18', 'ana.pereira@agrosoja.com', '00123456000'),
-    ('João Costa', '1982-09-30', 'j.costa@agrosoja.com', '00123456000'),
-    ('Renan Lima', '1993-12-12', 'renan.lima@agrosoja.com', '00123456000');
+INSERT INTO cadastro (nome, dtNasc, email, senha, cpf) VALUES
+    ('João Pedro', '1985-03-15', 'joao.pedro@agrosoja.com', 'Senha!Joao85', '12345678901'),
+    ('Matheus Oliveira', '1990-07-22', 'mat.oliveira@agrosoja.com', 'Matheus@2023', '23456789012'),
+    ('Carlos Pereira', '1978-11-05', 'carlos.p@agrosoja.com', 'Pereira!78#', '34567890123'),
+    ('Ana Pereira', '1995-02-18', 'ana.pereira@agrosoja.com', 'Ana@1995P!#', '45678901234'),
+    ('João Costa', '1982-09-30', 'j.costa@agrosoja.com', 'Costa$1982@', '56789012345'),
+    ('Renan Lima', '1993-12-12', 'renan.lima@agrosoja.com', 'RenanL!ma#93', '67890123456');
 
 SELECT nome AS Nome, dtNasc AS 'Data Nascimento' 
 FROM cadastro;
