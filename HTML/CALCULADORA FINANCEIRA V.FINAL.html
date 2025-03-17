@@ -23,18 +23,18 @@
 
         div.innerHTML = `Sua fazenda perde aproximadamente <b><span style="color: red;">R$${perda.value}</span></b>
         por ano devido à falta de controle de umidade.<br><br>
-        Com nosso projeto, essa perda pode ser reduzida em até <b>80%</b>,
-        diminuindo para apenas <b><span style="color: green;">R$${perda.value * 0.15}`
+        Com nosso projeto, essa perda pode ser reduzida em até <b>100%</b>,
+        diminuindo para apenas <b><span style="color: green;">R$0`
 
     }
 
     function calc() {
 
-        var metrosQuadrados = Number(ipt_hectar.value) * 10000;     //transformar de hectar para m²
-        var qtdSensor = (metrosQuadrados / 6)                       //6 entradas analogicas
-        var resultado = qtdSensor * 110;                            //preço da estrutura (6 sensores + arduino + jumpers)
-        var resultadoManutencao = qtdSensor * 0.40;                 //preço da manutenção por sensor (R$0.40)
-        var locacao = 12 * (qtdSensor * 0.20);                      //preço anual ao alugar o nosso sistema (por sensor o custo é de R$0.20)
+        var metrosQuadrados = Number(ipt_hectar.value) * 10000;   //transformar de hectar para m²
+        var qtdSensor = (metrosQuadrados / 6)                     //6 entradas analogicas
+        var resultado = qtdSensor * 110;                          //preço da estrutura (6 sensores + arduino + jumpers)
+        var resultadoManutencao = qtdSensor * 0.40;               //preço da manutenção por sensor (R$0.40)
+        var locacao = 12 * (qtdSensor * 0.035);                   //preço anual ao alugar o nosso sistema (por sensor o custo é de R$0.35)
 
         div.innerHTML = ` De acordo com o dado inserido acima, 
         o preço do nosso serviço custará R$${resultado} reais para a sua plantação. <br>
