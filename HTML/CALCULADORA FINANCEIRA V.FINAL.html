@@ -23,8 +23,8 @@
 
         div.innerHTML = `Sua fazenda perde aproximadamente <b><span style="color: red;">R$${perda.value}</span></b>
         por ano devido à falta de controle de umidade.<br><br>
-        Com nosso projeto, essa perda pode ser reduzida em até <b>100%</b>,
-        diminuindo para apenas <b><span style="color: green;">R$0`
+        Com nosso projeto, essa perda pode ser reduzida em até <b>75%</b>,
+        diminuindo para apenas <b><span style="color: green;">R$${perda.value * 0.25}` // em até 76%
 
     }
 
